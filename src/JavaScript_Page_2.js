@@ -6,7 +6,9 @@ var keyword = "HAHAHAYOUJUSTGORPRANKED";
 var L = 26;
 var asciioffset = 65;
 
-M = prompt("Please type in a message");
+M = document.getElementById("boxoftext").value;
+
+//M = UserEntered;
 
 //M = "ATTACKATDAWN";
 
@@ -101,4 +103,3 @@ function spacesBeGone (message_){
 
  
  }
- 
