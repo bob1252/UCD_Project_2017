@@ -1,6 +1,8 @@
 
+
 var limit = 99;
 
+//validate
 function validateInput(){
 	var localnumber = document.getElementById('thenumber');
 	var message = "";
@@ -12,7 +14,7 @@ function validateInput(){
 
 	else if (localnumber.value <= limit) {
 	
-		message = "[validate:] The number is OK... I think.";
+		message = "[validate:] The number is OK";
 		message_display.innerHTML = message;
 	
 	}
