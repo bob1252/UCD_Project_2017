@@ -6,100 +6,121 @@ var keyword = "HAHAHAYOUJUSTGORPRANKED";
 var L = 26;
 var asciioffset = 65;
 
-M = document.getElementById("boxoftext").value;
 
-//M = UserEntered;
+function remove_spaces(M) {
+
+    M = document.getElementById("boxoftext").value;
+
+    M = spacesBeGone(M);
+
+    K = generateEncryptionKey(M, keyword);
+
+    C = encrypt_(M, K);
+
+    document.getElementById("Output_Enc").value = C;
+
+    console.log(M);
+    console.log(K);
+    console.log(C);
+    console.log(D);
+}
+
+
+
+//M = prompt("Please type in a message");
 
 //M = "ATTACKATDAWN";
 
-M = spacesBeGone(M);
 
-K = generateEncryptionKey(M, keyword);
 
-C = encrypt_ (M, K);
+function Decrypt(C, K, D) {
 
-D = retuenClearText(C,K);
+    C = document.getElementById("boxoftext").value;
 
-console.log(K);
-console.log(C);
-console.log(M);
-console.log(D);
+    D = retuenClearText(C, K);
 
-function spacesBeGone (message_){
- 
-	var mwos = "";
-	for (var position = 0; position < message_.length ; position ++)
-		
-		if (message_.charAt(position) != ' '){
-		
-				mwos = mwos.concat(message_.charAt(position) );
-				
-		}
-	return mwos.toUpperCase();
- }
- 
- function generateEncryptionKey (message_, keyword_){
-	
-	var key = "";
-	var kwl = keyword_.length
-	var kwu = keyword_.toUpperCase();
-	
-	for (var position = 0 ; position < message_.length ; position++){
-	
-		key = key.concat(kwu.charAt (position % kwl));
-		//console.log(key);
-	
-	}
- 
-	return key;
- 
- }
- 
- 
- function encrypt_(message_, key_){
+    document.getElementById("Output_Dec").value = D;
 
- var encrypted = "";
- 
-	for (var position = 0 ; position < message_.length ; position++){ 
-		var lettercode = message_.charCodeAt(position);
-		var keycode = key_.charCodeAt(position);
-		
-		encrypted =
-		encrypted.concat(		
-			String.fromCharCode (((lettercode + keycode) % L) + asciioffset));
-			//console.log(encrypted);
-			}
- 
- return encrypted;
- 
- }
- 
- function retuenClearText (ciphertext_,key_){
- 
-	var decrypted = "";
-	
-	for (var position = 0 ; position < ciphertext_.length ; position++){
-	
-		var cipherpos = ciphertext_.charCodeAt(position) - asciioffset;
-		var keypos = key_.charCodeAt(position) - asciioffset;
-		var clearpos = (cipherpos - keypos);
-		
-		if (clearpos <= 0){
-		
-			clearpos += L;
-			}
-			
-			clearpos = clearpos %L;
-			
-			decrypted =
-			decrypted.concat(
-				String.fromCharCode (clearpos + asciioffset));
-		
-		
-			
-	}
-	
-	return decrypted;
+}
 
- 
- }
+
+
+
+
+function spacesBeGone(message_) {
+
+    var mwos = "";
+    for (var position = 0; position < message_.length; position ++)
+        if (message_.charAt(position) != ' ') {
+
+            mwos = mwos.concat(message_.charAt(position));
+
+        }
+    return mwos.toUpperCase();
+}
+
+function generateEncryptionKey(message_, keyword_) {
+
+    var key = "";
+    var kwl = keyword_.length
+    var kwu = keyword_.toUpperCase();
+
+    for (var position = 0; position < message_.length; position++) {
+
+        key = key.concat(kwu.charAt(position % kwl));
+        //console.log(key);
+
+    }
+
+    return key;
+
+}
+
+
+function encrypt_(message_, key_) {
+
+    var encrypted = "";
+
+    for (var position = 0; position < message_.length; position++) {
+        var lettercode = message_.charCodeAt(position);
+        var keycode = key_.charCodeAt(position);
+
+        encrypted =
+                encrypted.concat(
+                        String.fromCharCode(((lettercode + keycode) % L) + asciioffset));
+        //console.log(encrypted);
+    }
+
+    return encrypted;
+
+}
+
+function retuenClearText(ciphertext_, key_) {
+
+    var decrypted = "";
+
+    for (var position = 0; position < ciphertext_.length; position++) {
+
+        var cipherpos = ciphertext_.charCodeAt(position) - asciioffset;
+        var keypos = key_.charCodeAt(position) - asciioffset;
+        var clearpos = (cipherpos - keypos);
+
+        if (clearpos <= 0) {
+
+            clearpos += L;
+        }
+
+        clearpos = clearpos % L;
+
+        decrypted =
+                decrypted.concat(
+                        String.fromCharCode(clearpos + asciioffset));
+
+
+
+    }
+
+    return decrypted;
+
+
+}
