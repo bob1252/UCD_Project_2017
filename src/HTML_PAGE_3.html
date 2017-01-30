@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+add differnet message box for square / cube
 -->
 <html>
     <head>
@@ -10,25 +8,46 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="CSS.css">
-        
+
     </head>
-<body>
-<h3>Number input validation</h3>
+    <body>
 
-<form method ="post">
-<label for = "inputone"> type in a number</label>
-<input type = "text" id = "thenumber" />
-<input type = "button" value = "validate" onclick = "validateInput();"/>
-<input type = "button" value = "square" onclick = "square();"/>
-<input type = "button" value = "cube" onclick = "cube();"/>
-</form>
+        <table>
 
-<div id = "responce"></div>
-<div id = "message_display"></div>
+            <tr><th colspan = "5">Number input validation</th> </tr>
 
+            <tr>
+
+                <td>  <label for = "inputone"> type in a number</label></td> 
+                <td> <input type = "text" id = "thenumber" /></td>
+                <td><input type = "button" value = "validate" onclick = "validateInput();"/></td><tr>
+                <td><input type = "button" value = "square" onclick = "square();"/></td> 
+                <td><input type = "button" value = "cube" onclick = "cube();"/></td> 
+
+            </tr>
+            
+            <tr>
+                
+                <td colspan="3"><div id = "message_display"></div></td>
+                
+                
+            </tr>
+            <tr>
+                <td colspan="3"><div id = "responce"></div></td>
+                
+            </tr>
+
+
+
+
+            
+            
+
+            
+
+        </table>
 <script type="text/javascript" src="JS_Page_3.js"></script> 
-    
- </body>
+    </body>
 
- </html>
- 
+</html>
+
