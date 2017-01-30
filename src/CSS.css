@@ -1,3 +1,11 @@
+/* Robert Nicoll - HNC computing
+   version 2 */ 
+    
+/* 23.01.17 added css to give basic black/green colour scheme */
+/* 30.01.17 added rest of css for home & buttons */
+
+
+
 body{color: #39FF1A;
 
      background: #000000}
@@ -21,6 +29,9 @@ input[type=text] {
     color: #39FF1A;
 }
 
+/*↑ 23.01.17 ---- ↓ 30.01.17*/
+
+
 input[type=button] {
   color: #000000;
   background-color: #39FF1A;
@@ -28,8 +39,8 @@ input[type=button] {
   text-transform: capitalize;
 }
 
-#th- {
+#home {
     
-    border-collapse: collapse;
+    text-transform: capitalize;
     
 }
