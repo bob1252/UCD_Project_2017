@@ -1,48 +1,42 @@
-
-
-var limit = 99;
+var limit = 10000;
 
 //validate
-function validateInput(){
-	var localnumber = document.getElementById('thenumber');
-	var message = "";
-	
-	if (localnumber.value > limit){
-		message = "[validate:] The number is too large.";
-		message_display.innerHTML = message;
-	}
+function validateInput() {
+    var localnumber = document.getElementById('thenumber');
+    var message = "";
 
-	else if (localnumber.value <= limit) {
-	
-		message = "[validate:] The number is OK";
-		message_display.innerHTML = message;
-	
-	}
-	
-	else{
-	
-		message = "[validate:] The number is acceptable";
-		message_display.innerHTML = message;
+    if (localnumber.value > limit) {
+        message = "[validate:] The number is too large.";
+        message_display.innerHTML = message;
+    } else if (localnumber.value <= limit) {
 
-	}
+        message = "[validate:] The number is OK";
+        message_display.innerHTML = message;
+
+    } else {
+
+        message = "[validate:] The number is acceptable";
+        message_display.innerHTML = message;
+
+    }
 }
 
 //convert
 
-function cube(){
+function cube() {
 
-	var localnumber = document.getElementById('thenumber');
-	var result = localnumber.value * localnumber.value  *localnumber.value ;
-	var messagestring = "";
-	responce.innerHTML = messagestring.concat("cube: ", result.toString());
+    var localnumber = document.getElementById('thenumber');
+    var result = localnumber.value * localnumber.value * localnumber.value;
+    var messagestring = "";
+    responce.innerHTML = messagestring.concat("cube: ", result.toString());
 
 }
 
-function square (){
+function square() {
 
-	var localnumber = document.getElementById('thenumber');
-	var result = localnumber.value * localnumber.value;
-	var messagestring = "";
-	responce.innerHTML = messagestring.concat("square:", result.toString());
+    var localnumber = document.getElementById('thenumber');
+    var result = localnumber.value * localnumber.value;
+    var messagestring = "";
+    responce.innerHTML = messagestring.concat("square:", result.toString());
 
 }

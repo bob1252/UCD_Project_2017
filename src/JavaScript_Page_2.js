@@ -7,45 +7,29 @@ var L = 26;
 var asciioffset = 65;
 
 
-function remove_spaces(M) {
+function Encrypt_UI_Button() {
 
     M = document.getElementById("boxoftext").value;
-
     M = spacesBeGone(M);
-
     K = generateEncryptionKey(M, keyword);
-
     C = encrypt_(M, K);
-
     document.getElementById("Output_Enc").value = C;
 
-    console.log(M);
-    console.log(K);
-    console.log(C);
-    console.log(D);
+//    Testing
+//    console.log(M);
+//    console.log(K);
+//    console.log(C);
+//    console.log(D);
 }
 
+function Decrypt(C, D, encrypted) {
 
-
-//M = prompt("Please type in a message");
-
-//M = "ATTACKATDAWN";
-
-
-
-function Decrypt(C, K, D) {
-
-    C = document.getElementById("boxoftext").value;
-
-    D = retuenClearText(C, K);
-
+    UserEnc = document.getElementById("boxoftext2").value;
+    K = generateEncryptionKey(UserEnc, keyword);
+    D = retuenClearText(encrypted, K);
     document.getElementById("Output_Dec").value = D;
 
 }
-
-
-
-
 
 function spacesBeGone(message_) {
 
@@ -68,7 +52,6 @@ function generateEncryptionKey(message_, keyword_) {
     for (var position = 0; position < message_.length; position++) {
 
         key = key.concat(kwu.charAt(position % kwl));
-        //console.log(key);
 
     }
 
@@ -81,6 +64,7 @@ function encrypt_(message_, key_) {
 
     var encrypted = "";
 
+
     for (var position = 0; position < message_.length; position++) {
         var lettercode = message_.charCodeAt(position);
         var keycode = key_.charCodeAt(position);
@@ -88,16 +72,16 @@ function encrypt_(message_, key_) {
         encrypted =
                 encrypted.concat(
                         String.fromCharCode(((lettercode + keycode) % L) + asciioffset));
-        //console.log(encrypted);
     }
 
     return encrypted;
 
 }
 
-function retuenClearText(ciphertext_, key_) {
+function retuenClearText(encrypted, key_) {
 
     var decrypted = "";
+    var ciphertext_ = UserEnc;
 
     for (var position = 0; position < ciphertext_.length; position++) {
 
@@ -116,11 +100,8 @@ function retuenClearText(ciphertext_, key_) {
                 decrypted.concat(
                         String.fromCharCode(clearpos + asciioffset));
 
-
-
     }
 
     return decrypted;
-
 
 }

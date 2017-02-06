@@ -12,40 +12,39 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="CSS.css">
     </head>
     <body>
-        
-                <table>
-            
-            
-            
-            <th>Encrypt / Decrypt</th>
-            
+
+        <table>
+
+            <th colspan="3">Encrypt / Decrypt</th>
+
             <tr> 
-                <td> User Enter Message Here </td> 
+                <td> User Enter Message To Be Encrypted Below </td> 
+                <td> User Enter Message To Be Decrypted Below </td> 
             </tr>
-            
+
             <tr> 
                 <td> <input id="boxoftext" type="text" size="50"/> </td> 
+                <td> <input id="boxoftext2" type="text" size="50"/> </td> 
             </tr>
-            
+
             <tr> 
-                <td> <input type="button" onclick ="remove_spaces(M);" value= "encrypt"> </td>
-                <td> <input type="button" onclick ="Decrypt(C,K,D);" value= "convert to text"> </td>
+                <td> <input type="button" onclick ="Encrypt_UI_Button()" value= "encrypt"> </td>
+                <td> <input type="button" onclick ="Decrypt(C, K, D);" value= "convert to text"> </td>
             </tr>
-            
+
             <tr> 
                 <td> Encrypted Output </td>
                 <td> Decrypted Output </td>
             </tr>
-            
+
             <tr> 
                 <td> <input id="Output_Enc" type="text" size="50"/> </td>
                 <td> <input id="Output_Dec" type="text" size="50"/> </td>
             </tr>
-            
-            <tr><td><a href="index.html.html">Home</a></td></tr>
-          
+
+            <tr><td colspan="3"><a href="index.html">Home</a></td></tr>
+
         </table>
-        
-           <script type="text/javascript" src="JavaScript_Page_2.js"></script> 
+        <script type="text/javascript" src="JavaScript_Page_2.js"></script> 
     </body>
 </html>
