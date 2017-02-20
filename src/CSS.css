@@ -7,20 +7,27 @@
 
 
 body{color: #39FF1A;
-
-     background: #000000}
+    font-size: 15px;
+    background: #000000}
 
 a{
 
     color: #39FF1A;
     text-transform: capitalize;
+    font-size: 25px;
 
 }
 
 
 table, th, td {
     border: 1px solid #39FF1A;
-    border-collapse: collapse;}
+    border-collapse: collapse;
+}
+
+th{
+    font-size: 35px;
+    
+}
 
 input[type=text] {
     border-collapse: collapse;
@@ -38,21 +45,22 @@ input[type=button] {
     color: #000000;
     background-color: #39FF1A;
     border: 1px solid #39FF1A;
+    vertical-align: middle;
     text-transform: capitalize;
 }
 
 #home {
 
     text-transform: capitalize;
-
 }
 
 a:link, a:visited {
-    height: 20px;
+    height: 30px;
     width:  500px;
     background-color: #39FF1A;
     color: #000000;
-    padding: 1px 2px;
+    padding: 3px 5px;
+    vertical-align: middle;
     text-align: center;
     text-decoration: none;
     display: inline-block;
